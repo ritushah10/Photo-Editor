@@ -1,0 +1,50 @@
+USEME - SIMPLE IMAGE EDITOR PROGRAM - MATTHEW LOVE & RITU SHAH
+
+GUI Instructions:
+The initial screen has a left panel to view the image and a right panel to view the histogram for the current image.
+- At the top there are two options File & Edit
+- Within File, you can load, save, and change the current image layer
+- Within Edit, you can brighten, flip, show component (red, green, blue, luma, value, intensity), or filter (sharpen, blur, sepia, greyscale)
+- Selecting filter or component will show an additional drop down for more operations
+
+Script Commands Supported:
+- load <path> <save-name> - Load an image using the given path, and saving it with the given name.
+- save <path> <save-name> - Saves the specified image to the given path.
+- brighten <value> <image-name> <save-name> - Brightens an image to the value (pos/neg) and saves to the new name. A negative number indicates darkening.
+- vertical-flip <image-name> <save-name> - Flips the image vertically and saves to the new name.
+- horizontal-flip <image-name> <save-name> - Flips the image horizontally and saves to the new name.
+- value-component <image-name> <save-name> - Converts the image to show the value component and saves to the new name.
+- intensity-component <image-name> <save-name> - Converts the image to show the intensity component and saves to the new name.
+- luma-component <image-name> <save-name> - Converts the image to show the luma component and saves to the new name.
+- red-component <image-name> <save-name> - Converts the image to show the red component and saves to the new name.
+- green-component <image-name> <save-name> - Converts the image to show the green component and saves to the new name.
+- blue-component <image-name> <save-name> - Converts the image to show the blue component and saves to the new name.
+- blur <image-name> <save-name> - Blurs the given image and saves the image to the new name.
+- sharpen <image-name> <save-name> - Sharpens the given image and saves the image to the new name.
+- sepia <image-name> <save-name> - Transforms the color of the image to a sepia tone.
+- greyscale <image-name> <save-name> - Transforms the color of the image to greyscale and saves the image to the new name.
+- menu - Shows the menu screen again with all the commands.
+- q - if you would like to quit the program.
+
+Example of loading, flipping horizontally, blurring, and saving a PNG image as a JPG file:
+- load res/image_path.png image1
+- horizontal-flip image1 hflip_image1
+- blur hflip_image1 blurred_image1
+- save res/new_image_path.jpg blurred_image1
+
+Example of loading, flipping vertically, sharpening, converting to sepia, and saving a PPM image as a BMP file:
+- load res/image_path.ppm image1
+- vertical-flip image1 image2
+- sharpen image2 image3
+- sepia image3 image4
+- save res/new_image_path.bmp image4
+
+
+CONDITIONS:
+- The load command must be executed before any sort of operation can occur. The image must be loaded into memory before conducting operations.
+- Use the command letter q to quit the program at time and the command menu to show the list of commands again.
+- When saving, you can only save into file types of "PNG", "JPG", "PPM", and "BMP", or you'll get an error
+- When brightening an image, the value can be either positive or negative to brighten or darken an image respectively.
+
+Note on the script file:
+- There is no need to provide a quit command at the end, as the program will do so accordingly if it doesn't detect there is one. This ensures the Scanner used does not run out of inputs.
